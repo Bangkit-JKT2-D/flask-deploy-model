@@ -1,5 +1,6 @@
 from flask import Flask, request
 from model import predict
+import json
 
 app = Flask(__name__)
 
@@ -8,12 +9,12 @@ def index():
     return "Hi :*"
 
 @app.route('/predict', methods=['GET', 'POST'])
-def predict():
-    data = request.form.get('data')
+def predict_images():
+    data = request.files['file']
     if data == None:
         return 'Got Nothing'
     else:
-        prediction = model.predict.predict(data)
+        prediction = predict.predict(data)
 
     return json.dumps(str(prediction))
 
