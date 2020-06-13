@@ -25,7 +25,6 @@ colorlog==4.0.2
 configparser==3.5.3
 croniter==0.3.31
 cryptography==2.1.4
-cv2==1.0.0
 cycler==0.10.0
 Cython==0.29.16
 decorator==4.4.2
