@@ -29,7 +29,6 @@ def predict(data):
     images = np.vstack([processed_image])
     classes = model.predict(images, batch_size=10)
     label = np.where(classes[0] > 0.5, 1,0)
-    
     if label == 0:
         return "Fresh Fruit"
     else:
