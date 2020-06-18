@@ -28,18 +28,9 @@ def predict(data):
 
     images = np.vstack([processed_image])
     classes = model.predict(images, batch_size=10)
-    print(classes)
-    max = np.amax(classes[0])
-    print(np.where(classes[0] == max)[0])
-    if np.where(classes[0] == max)[0] == 0:
-        return 'Fresh Apple'
-    elif np.where(classes[0] == max)[0] == 1:
-        return 'Fresh Banana'
-    elif np.where(classes[0] == max)[0] == 2:
-        return 'Fresh Orange'
-    elif np.where(classes[0] == max)[0] == 3:
-        return 'Rotten Apple'
-    elif np.where(classes[0] == max)[0] == 4:
-        return 'Rotten Banana'
+    label = np.where(classes[0] > 0.5, 1,0)
+    
+    if label == 0:
+        return "Fresh Fruit"
     else:
-        return 'Rotten orange'
+        return "Rotten Fruit"
