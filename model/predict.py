@@ -15,9 +15,11 @@ model.compile(
 def preprocess_image(img, target_size):
     if img.mode != "RGB":
         img = img.convert("RGB")
+    
     img = img.resize(target_size)
     img = image.img_to_array(img)
     img = np.expand_dims(img, axis=0)
+    img = img/255
     return img
 
 def predict(data):
@@ -26,7 +28,9 @@ def predict(data):
 
     images = np.vstack([processed_image])
     classes = model.predict(images, batch_size=10)
+    print(classes)
     max = np.amax(classes[0])
+    print(np.where(classes[0] == max)[0])
     if np.where(classes[0] == max)[0] == 0:
         return 'Fresh Apple'
     elif np.where(classes[0] == max)[0] == 1:
