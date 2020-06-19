@@ -30,6 +30,8 @@ def predict(data):
     classes = model.predict(images, batch_size=10)
     label = np.where(classes[0] > 0.5, 1,0)
     if label == 0:
-        return "Fresh Fruit"    
+        conf = round(float(1.0 - classes[0])*100, 2)
+        return f"Fresh Fruit ({conf}%)"    
     else:
-        return "Rotten Fruit"
+        conf = round(float(classes[0])*100, 2)
+        return f"Rotten Fruit ({conf}%)"
