@@ -156,7 +156,7 @@ sqlparse==0.3.1
 tabulate==0.8.7
 tb-nightly==1.15.0a20190806
 tenacity==4.12.0
-tensorflow==2.4.0
+tensorflow==2.5.0
 termcolor==1.1.0
 terminado==0.8.3
 # tesseract-ocr==0.0.1
