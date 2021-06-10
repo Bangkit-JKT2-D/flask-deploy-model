@@ -33,7 +33,7 @@ decorator==4.4.2
 defusedxml==0.6.0
 dill==0.3.1.1
 distlib==0.3.0
-Django==3.0.14
+Django==3.1.12
 docutils==0.16
 Eel==0.11.0
 entrypoints==0.3
