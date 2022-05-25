@@ -123,7 +123,7 @@ pycrypto==2.6.1
 Pygments==2.7.4
 # pygobject==3.26.1
 PyInstaller==3.6
-PyJWT==1.7.1
+PyJWT==2.4.0
 pylint==2.4.4
 pyparsing==2.4.7
 pyrsistent==0.16.0
